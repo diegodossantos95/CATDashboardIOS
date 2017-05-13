@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		128605041E55E15F00C698B5 /* SAPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128605031E55E15F00C698B5 /* SAPCommon.framework */; };
+		128605051E55E16600C698B5 /* SAPCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 128605031E55E15F00C698B5 /* SAPCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		17511F413081F2BB187ECB4B /* CATService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D9840BCB2BF89C86BFD50 /* CATService.swift */; };
+		6ABEF3BE98638FF1A75A0921 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23994CFBE8BE80A15EF00E6E /* Project.swift */; };
+		6D91A67F948045AB440DD115 /* CATServiceMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2478CBB0E780CE0523F435C /* CATServiceMetadata.swift */; };
+		755EE24B1DD4760600F41DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755EE24A1DD4760600F41DC4 /* AppDelegate.swift */; };
+		755EE2501DD4760700F41DC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755EE24E1DD4760700F41DC4 /* Main.storyboard */; };
+		755EE2521DD4760700F41DC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 755EE2511DD4760700F41DC4 /* Assets.xcassets */; };
+		755EE2551DD4760700F41DC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755EE2531DD4760700F41DC4 /* LaunchScreen.storyboard */; };
+		7569DA571E5C807F00C5D751 /* SAPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7569DA551E5C806800C5D751 /* SAPFoundation.framework */; };
+		7569DA581E5C807F00C5D751 /* SAPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7569DA551E5C806800C5D751 /* SAPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		756C7B801DD4C0690017B469 /* SAPOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756C7B781DD4C0600017B469 /* SAPOData.framework */; };
+		756C7B811DD4C0690017B469 /* SAPOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 756C7B781DD4C0600017B469 /* SAPOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75C120411E682416005E9FD2 /* SAPOfflineOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C1203F1E6823E8005E9FD2 /* SAPOfflineOData.framework */; };
+		75C120421E682416005E9FD2 /* SAPOfflineOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75C1203F1E6823E8005E9FD2 /* SAPOfflineOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75C120431E682416005E9FD2 /* SAPFiori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C1203D1E6823E0005E9FD2 /* SAPFiori.framework */; };
+		75C120441E682416005E9FD2 /* SAPFiori.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75C1203D1E6823E0005E9FD2 /* SAPFiori.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		85225158597D4A8CEBEF7736 /* IssueCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A6BE783A1222A685B95344 /* IssueCategory.swift */; };
+		8F87CAA51EC765A700D6EE87 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F87CAA41EC765A700D6EE87 /* MasterTableViewController.swift */; };
+		BC41F7BE6203E4AB03369493 /* IssuePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1BAEC3B236C0E3BCEFFC85 /* IssuePriority.swift */; };
+		BFDEEE6D06CF506BD2DECD43 /* IssueStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E17A1B3B4277430D0DF60 /* IssueStatus.swift */; };
+		D04E99F6A13280926228F0CD /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC37C9F89CB060D1A5AB6D1C /* Issue.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		755EE25C1DD4760700F41DC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 755EE23F1DD4760600F41DC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 755EE2461DD4760600F41DC4;
+			remoteInfo = CATDashboard;
+		};
+		755EE2671DD4760700F41DC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 755EE23F1DD4760600F41DC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 755EE2461DD4760600F41DC4;
+			remoteInfo = CATDashboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		756C7B821DD4C0690017B469 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7569DA581E5C807F00C5D751 /* SAPFoundation.framework in Embed Frameworks */,
+				75C120441E682416005E9FD2 /* SAPFiori.framework in Embed Frameworks */,
+				75C120421E682416005E9FD2 /* SAPOfflineOData.framework in Embed Frameworks */,
+				128605051E55E16600C698B5 /* SAPCommon.framework in Embed Frameworks */,
+				756C7B811DD4C0690017B469 /* SAPOData.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		035E17A1B3B4277430D0DF60 /* IssueStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IssueStatus.swift; path = "Proxy Classes/catdashboard/public/IssueStatus.swift"; sourceTree = "<group>"; };
+		128605031E55E15F00C698B5 /* SAPCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPCommon.framework; sourceTree = "<group>"; };
+		23994CFBE8BE80A15EF00E6E /* Project.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Project.swift; path = "Proxy Classes/catdashboard/public/Project.swift"; sourceTree = "<group>"; };
+		524D9840BCB2BF89C86BFD50 /* CATService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CATService.swift; path = "Proxy Classes/catdashboard/public/CATService.swift"; sourceTree = "<group>"; };
+		755EE2471DD4760600F41DC4 /* CATDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CATDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		755EE24A1DD4760600F41DC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		755EE24F1DD4760700F41DC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		755EE2511DD4760700F41DC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		755EE2541DD4760700F41DC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		755EE2561DD4760700F41DC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		755EE25B1DD4760700F41DC4 /* CATDashboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CATDashboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		755EE2661DD4760700F41DC4 /* CATDashboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CATDashboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7569DA551E5C806800C5D751 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFoundation.framework; sourceTree = "<group>"; };
+		756C7B781DD4C0600017B469 /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
+		75C1203D1E6823E0005E9FD2 /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFiori.framework; sourceTree = "<group>"; };
+		75C1203F1E6823E8005E9FD2 /* SAPOfflineOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOfflineOData.framework; sourceTree = "<group>"; };
+		8F87CAA41EC765A700D6EE87 /* MasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterTableViewController.swift; path = ViewControllers/MasterTableViewController.swift; sourceTree = "<group>"; };
+		AD1BAEC3B236C0E3BCEFFC85 /* IssuePriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IssuePriority.swift; path = "Proxy Classes/catdashboard/public/IssuePriority.swift"; sourceTree = "<group>"; };
+		D2478CBB0E780CE0523F435C /* CATServiceMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CATServiceMetadata.swift; path = "Proxy Classes/catdashboard/public/CATServiceMetadata.swift"; sourceTree = "<group>"; };
+		D8A6BE783A1222A685B95344 /* IssueCategory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IssueCategory.swift; path = "Proxy Classes/catdashboard/public/IssueCategory.swift"; sourceTree = "<group>"; };
+		DC37C9F89CB060D1A5AB6D1C /* Issue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Issue.swift; path = "Proxy Classes/catdashboard/public/Issue.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		755EE2441DD4760600F41DC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7569DA571E5C807F00C5D751 /* SAPFoundation.framework in Frameworks */,
+				75C120431E682416005E9FD2 /* SAPFiori.framework in Frameworks */,
+				75C120411E682416005E9FD2 /* SAPOfflineOData.framework in Frameworks */,
+				756C7B801DD4C0690017B469 /* SAPOData.framework in Frameworks */,
+				128605041E55E15F00C698B5 /* SAPCommon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755EE2581DD4760700F41DC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755EE2631DD4760700F41DC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		755EE23E1DD4760600F41DC4 = {
+			isa = PBXGroup;
+			children = (
+				755EE2491DD4760600F41DC4 /* CATDashboard */,
+				756C7B751DD4C0320017B469 /* Frameworks */,
+				755EE2481DD4760600F41DC4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		755EE2481DD4760600F41DC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				755EE2471DD4760600F41DC4 /* CATDashboard.app */,
+				755EE25B1DD4760700F41DC4 /* CATDashboardTests.xctest */,
+				755EE2661DD4760700F41DC4 /* CATDashboardUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		755EE2491DD4760600F41DC4 /* CATDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				8F87CAA31EC7659400D6EE87 /* ViewControllers */,
+				755EE24A1DD4760600F41DC4 /* AppDelegate.swift */,
+				755EE24E1DD4760700F41DC4 /* Main.storyboard */,
+				755EE2511DD4760700F41DC4 /* Assets.xcassets */,
+				755EE2531DD4760700F41DC4 /* LaunchScreen.storyboard */,
+				755EE2561DD4760700F41DC4 /* Info.plist */,
+				7C34B231C5D024047F4AFEDB /* Proxy Classes */,
+			);
+			path = CATDashboard;
+			sourceTree = "<group>";
+		};
+		756C7B751DD4C0320017B469 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75C1203F1E6823E8005E9FD2 /* SAPOfflineOData.framework */,
+				75C1203D1E6823E0005E9FD2 /* SAPFiori.framework */,
+				7569DA551E5C806800C5D751 /* SAPFoundation.framework */,
+				756C7B781DD4C0600017B469 /* SAPOData.framework */,
+				128605031E55E15F00C698B5 /* SAPCommon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C34B231C5D024047F4AFEDB /* Proxy Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8F6C6B3320E8905ECC3FAC20 /* catdashboard */,
+			);
+			name = "Proxy Classes";
+			sourceTree = "<group>";
+		};
+		8F6C6B3320E8905ECC3FAC20 /* catdashboard */ = {
+			isa = PBXGroup;
+			children = (
+				DB985628B7867F357CFB1738 /* public */,
+			);
+			name = catdashboard;
+			sourceTree = "<group>";
+		};
+		8F87CAA31EC7659400D6EE87 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8F87CAA41EC765A700D6EE87 /* MasterTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DB985628B7867F357CFB1738 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				524D9840BCB2BF89C86BFD50 /* CATService.swift */,
+				D2478CBB0E780CE0523F435C /* CATServiceMetadata.swift */,
+				DC37C9F89CB060D1A5AB6D1C /* Issue.swift */,
+				D8A6BE783A1222A685B95344 /* IssueCategory.swift */,
+				AD1BAEC3B236C0E3BCEFFC85 /* IssuePriority.swift */,
+				035E17A1B3B4277430D0DF60 /* IssueStatus.swift */,
+				23994CFBE8BE80A15EF00E6E /* Project.swift */,
+			);
+			name = public;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		755EE2461DD4760600F41DC4 /* CATDashboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 755EE26F1DD4760700F41DC4 /* Build configuration list for PBXNativeTarget "CATDashboard" */;
+			buildPhases = (
+				755EE2431DD4760600F41DC4 /* Sources */,
+				755EE2441DD4760600F41DC4 /* Frameworks */,
+				755EE2451DD4760600F41DC4 /* Resources */,
+				756C7B821DD4C0690017B469 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CATDashboard;
+			productName = CATDashboard;
+			productReference = 755EE2471DD4760600F41DC4 /* CATDashboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		755EE25A1DD4760700F41DC4 /* CATDashboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 755EE2721DD4760700F41DC4 /* Build configuration list for PBXNativeTarget "CATDashboardTests" */;
+			buildPhases = (
+				755EE2571DD4760700F41DC4 /* Sources */,
+				755EE2581DD4760700F41DC4 /* Frameworks */,
+				755EE2591DD4760700F41DC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				755EE25D1DD4760700F41DC4 /* PBXTargetDependency */,
+			);
+			name = CATDashboardTests;
+			productName = CATDashboardTests;
+			productReference = 755EE25B1DD4760700F41DC4 /* CATDashboardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		755EE2651DD4760700F41DC4 /* CATDashboardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 755EE2751DD4760700F41DC4 /* Build configuration list for PBXNativeTarget "CATDashboardUITests" */;
+			buildPhases = (
+				755EE2621DD4760700F41DC4 /* Sources */,
+				755EE2631DD4760700F41DC4 /* Frameworks */,
+				755EE2641DD4760700F41DC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				755EE2681DD4760700F41DC4 /* PBXTargetDependency */,
+			);
+			name = CATDashboardUITests;
+			productName = CATDashboardUITests;
+			productReference = 755EE2661DD4760700F41DC4 /* CATDashboardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		755EE23F1DD4760600F41DC4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = SAP;
+				TargetAttributes = {
+					755EE2461DD4760600F41DC4 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					755EE25A1DD4760700F41DC4 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 755EE2461DD4760600F41DC4;
+					};
+					755EE2651DD4760700F41DC4 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 755EE2461DD4760600F41DC4;
+					};
+				};
+			};
+			buildConfigurationList = 755EE2421DD4760600F41DC4 /* Build configuration list for PBXProject "CATDashboard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 755EE23E1DD4760600F41DC4;
+			productRefGroup = 755EE2481DD4760600F41DC4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				755EE2461DD4760600F41DC4 /* CATDashboard */,
+				755EE25A1DD4760700F41DC4 /* CATDashboardTests */,
+				755EE2651DD4760700F41DC4 /* CATDashboardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		755EE2451DD4760600F41DC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				755EE2551DD4760700F41DC4 /* LaunchScreen.storyboard in Resources */,
+				755EE2521DD4760700F41DC4 /* Assets.xcassets in Resources */,
+				755EE2501DD4760700F41DC4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755EE2591DD4760700F41DC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755EE2641DD4760700F41DC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		755EE2431DD4760600F41DC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F87CAA51EC765A700D6EE87 /* MasterTableViewController.swift in Sources */,
+				755EE24B1DD4760600F41DC4 /* AppDelegate.swift in Sources */,
+				17511F413081F2BB187ECB4B /* CATService.swift in Sources */,
+				6D91A67F948045AB440DD115 /* CATServiceMetadata.swift in Sources */,
+				D04E99F6A13280926228F0CD /* Issue.swift in Sources */,
+				85225158597D4A8CEBEF7736 /* IssueCategory.swift in Sources */,
+				BC41F7BE6203E4AB03369493 /* IssuePriority.swift in Sources */,
+				BFDEEE6D06CF506BD2DECD43 /* IssueStatus.swift in Sources */,
+				6ABEF3BE98638FF1A75A0921 /* Project.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755EE2571DD4760700F41DC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755EE2621DD4760700F41DC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		755EE25D1DD4760700F41DC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 755EE2461DD4760600F41DC4 /* CATDashboard */;
+			targetProxy = 755EE25C1DD4760700F41DC4 /* PBXContainerItemProxy */;
+		};
+		755EE2681DD4760700F41DC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 755EE2461DD4760600F41DC4 /* CATDashboard */;
+			targetProxy = 755EE2671DD4760700F41DC4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		755EE24E1DD4760700F41DC4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				755EE24F1DD4760700F41DC4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		755EE2531DD4760700F41DC4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				755EE2541DD4760700F41DC4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		755EE26D1DD4760700F41DC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		755EE26E1DD4760700F41DC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		755EE2701DD4760700F41DC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = CATDashboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.diegodossantos.CATDashboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		755EE2711DD4760700F41DC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = CATDashboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.diegodossantos.CATDashboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		755EE2731DD4760700F41DC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CATDashboardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.CATDashboardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CATDashboard.app/CATDashboard";
+			};
+			name = Debug;
+		};
+		755EE2741DD4760700F41DC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CATDashboardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.CATDashboardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CATDashboard.app/CATDashboard";
+			};
+			name = Release;
+		};
+		755EE2761DD4760700F41DC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = CATDashboardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.CATDashboardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CATDashboard;
+			};
+			name = Debug;
+		};
+		755EE2771DD4760700F41DC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = CATDashboardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.CATDashboardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CATDashboard;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		755EE2421DD4760600F41DC4 /* Build configuration list for PBXProject "CATDashboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				755EE26D1DD4760700F41DC4 /* Debug */,
+				755EE26E1DD4760700F41DC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		755EE26F1DD4760700F41DC4 /* Build configuration list for PBXNativeTarget "CATDashboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				755EE2701DD4760700F41DC4 /* Debug */,
+				755EE2711DD4760700F41DC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		755EE2721DD4760700F41DC4 /* Build configuration list for PBXNativeTarget "CATDashboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				755EE2731DD4760700F41DC4 /* Debug */,
+				755EE2741DD4760700F41DC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		755EE2751DD4760700F41DC4 /* Build configuration list for PBXNativeTarget "CATDashboardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				755EE2761DD4760700F41DC4 /* Debug */,
+				755EE2771DD4760700F41DC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 755EE23F1DD4760600F41DC4 /* Project object */;
+}
