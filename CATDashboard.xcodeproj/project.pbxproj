@@ -26,6 +26,8 @@
 		75C120441E682416005E9FD2 /* SAPFiori.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75C1203D1E6823E0005E9FD2 /* SAPFiori.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85225158597D4A8CEBEF7736 /* IssueCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A6BE783A1222A685B95344 /* IssueCategory.swift */; };
 		8F87CAA51EC765A700D6EE87 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F87CAA41EC765A700D6EE87 /* MasterTableViewController.swift */; };
+		8F87CAA71EC77DAF00D6EE87 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F87CAA61EC77DAF00D6EE87 /* Constants.swift */; };
+		8F87CAAA1EC7885E00D6EE87 /* CATServiceDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F87CAA91EC7885E00D6EE87 /* CATServiceDataAccess.swift */; };
 		BC41F7BE6203E4AB03369493 /* IssuePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1BAEC3B236C0E3BCEFFC85 /* IssuePriority.swift */; };
 		BFDEEE6D06CF506BD2DECD43 /* IssueStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E17A1B3B4277430D0DF60 /* IssueStatus.swift */; };
 		D04E99F6A13280926228F0CD /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC37C9F89CB060D1A5AB6D1C /* Issue.swift */; };
@@ -84,6 +86,8 @@
 		75C1203D1E6823E0005E9FD2 /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFiori.framework; sourceTree = "<group>"; };
 		75C1203F1E6823E8005E9FD2 /* SAPOfflineOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOfflineOData.framework; sourceTree = "<group>"; };
 		8F87CAA41EC765A700D6EE87 /* MasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterTableViewController.swift; path = ViewControllers/MasterTableViewController.swift; sourceTree = "<group>"; };
+		8F87CAA61EC77DAF00D6EE87 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Model/Constants.swift; sourceTree = "<group>"; };
+		8F87CAA91EC7885E00D6EE87 /* CATServiceDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CATServiceDataAccess.swift; path = Model/CATServiceDataAccess.swift; sourceTree = "<group>"; };
 		AD1BAEC3B236C0E3BCEFFC85 /* IssuePriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IssuePriority.swift; path = "Proxy Classes/catdashboard/public/IssuePriority.swift"; sourceTree = "<group>"; };
 		D2478CBB0E780CE0523F435C /* CATServiceMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CATServiceMetadata.swift; path = "Proxy Classes/catdashboard/public/CATServiceMetadata.swift"; sourceTree = "<group>"; };
 		D8A6BE783A1222A685B95344 /* IssueCategory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IssueCategory.swift; path = "Proxy Classes/catdashboard/public/IssueCategory.swift"; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				755EE2531DD4760700F41DC4 /* LaunchScreen.storyboard */,
 				755EE2561DD4760700F41DC4 /* Info.plist */,
 				7C34B231C5D024047F4AFEDB /* Proxy Classes */,
+				8F87CAA81EC77DB800D6EE87 /* Model */,
 			);
 			path = CATDashboard;
 			sourceTree = "<group>";
@@ -187,6 +192,15 @@
 				8F87CAA41EC765A700D6EE87 /* MasterTableViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8F87CAA81EC77DB800D6EE87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F87CAA61EC77DAF00D6EE87 /* Constants.swift */,
+				8F87CAA91EC7885E00D6EE87 /* CATServiceDataAccess.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		DB985628B7867F357CFB1738 /* public */ = {
@@ -343,8 +357,10 @@
 				17511F413081F2BB187ECB4B /* CATService.swift in Sources */,
 				6D91A67F948045AB440DD115 /* CATServiceMetadata.swift in Sources */,
 				D04E99F6A13280926228F0CD /* Issue.swift in Sources */,
+				8F87CAA71EC77DAF00D6EE87 /* Constants.swift in Sources */,
 				85225158597D4A8CEBEF7736 /* IssueCategory.swift in Sources */,
 				BC41F7BE6203E4AB03369493 /* IssuePriority.swift in Sources */,
+				8F87CAAA1EC7885E00D6EE87 /* CATServiceDataAccess.swift in Sources */,
 				BFDEEE6D06CF506BD2DECD43 /* IssueStatus.swift in Sources */,
 				6ABEF3BE98638FF1A75A0921 /* Project.swift in Sources */,
 			);
