@@ -11,7 +11,7 @@ import SAPFoundation
 
 struct Constants {
     
-    static let appId = "com.diegodossantos.CATDashboard"
+    static let appId = "catdashboard"
     private static let sapcpmsUrlString = "https://hcpms-i848202trial.hanatrial.ondemand.com/"
     static let sapcpmsUrl = URL(string: sapcpmsUrlString)!
     static let appUrl = Constants.sapcpmsUrl.appendingPathComponent(appId)
