@@ -9,12 +9,83 @@ import UIKit
 import SAPOData
 import SAPFiori
 
-class MasterTableViewController: UITableViewController {
+class MasterTableViewController: UITableViewController, ActivityIndicator {
     
-    // LOCAL VARIABLES
+    // MARK: LOCAL VARIABLES
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var _projects: [Project] = [Project]()
+    private var activityIndicator: UIActivityIndicatorView!
+    private var dataAccess: CATServiceDataAccess {
+        return appDelegate.catServiceClass
+    }
     
-    // MASTER TABLE DELEGATE
+    // MARK: VC LIFECYLE
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Initialize activity indicator
+        self.activityIndicator = self.initActivityIndicator()
+        self.activityIndicator.center = self.tableView.center
+        self.tableView.addSubview(self.activityIndicator)
+        // add refreshcontrol UI
+        self.refreshControl?.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
+        self.tableView.addSubview(refreshControl!)
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 98
+        
+        self.updateTableWithActivityIndicator()
+    }
+    
+    // MARK: PRIVATE FUNCTION
+    func refresh() {
+        DispatchQueue.global().async {
+            self.updateTable(completionHandler: {
+                DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
+                }
+            })
+        }
+    }
+    
+    private func updateTableWithActivityIndicator() {
+        self.showActivityIndicator(self.activityIndicator)
+        DispatchQueue.global().async {
+            self.updateTable(completionHandler: {
+                DispatchQueue.main.async {
+                    self.hideActivityIndicator(self.activityIndicator)
+                }
+            })
+        }
+    }
+    
+    private func updateTable(completionHandler: @escaping() -> Void) {
+        self.requestProjects { (error) in
+            defer {
+                completionHandler()
+            }
+            
+            guard error != nil else {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                return
+            }
+        }
+    }
+
+    private func requestProjects(completionHandler: @escaping(Error?) -> Void) {
+        self.dataAccess.loadProjects { (projects, error) in
+            guard let projects = projects else {
+                completionHandler(error!)
+                return
+            }
+            self._projects = projects
+            completionHandler(nil)
+        }
+    }
+    
+    
+    // MARK: MASTER TABLE DELEGATE
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self._projects.count
     }

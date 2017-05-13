@@ -20,11 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.catServiceClass = CATServiceDataAccess(urlSession: urlSession!)
         }
     }
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
-    }
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         
@@ -33,10 +28,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.urlSession = urlSession
         
         UINavigationBar.applyFioriStyle()
-        
-        // Override point for customization after application launch.
-        let splitViewController = self.window!.rootViewController as! UISplitViewController
-        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count - 1] as! UINavigationController
-        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
     }
 }
