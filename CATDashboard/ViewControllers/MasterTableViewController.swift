@@ -103,7 +103,7 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
         }
         
         objectCell.headlineText = project.name!
-        objectCell.subheadlineText = "CAT: " + project.startDate!.toString() + " - " + project.endDate!.toString()
+        objectCell.subheadlineText = "CAT: " + project.getCATDate()
         
         return objectCell
     }

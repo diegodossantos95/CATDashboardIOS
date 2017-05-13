@@ -80,4 +80,10 @@ open class Project: EntityValue {
             self.setOptionalValue(for: Project.startDate, to: value)
         }
     }
+    
+    func getCATDate() -> String {
+        let startDate = String(format:"%d/%d/%d", self.startDate!.month, self.startDate!.day, self.startDate!.year)
+        let endDate = String(format:"%d/%d/%d", self.endDate!.month, self.endDate!.day, self.endDate!.year)
+        return startDate + " - " + endDate
+    }
 }
