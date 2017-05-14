@@ -6,4 +6,10 @@
 //  Copyright © 2017 SAP. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class DetailsViewController: UIViewController {
+    
+    // MARK: LOCAL VARIABLES
+    var project: Project?
+}

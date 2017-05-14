@@ -12,7 +12,7 @@
         <!--Details-->
         <scene sceneID="XE9-j1-7bT">
             <objects>
-                <viewController title="Details" id="PfL-bW-nhF" customClass="DetailsViewController" sceneMemberID="viewController">
+                <viewController title="Details" id="PfL-bW-nhF" customClass="DetailsViewController" customModule="CATDashboard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Guy-h1-0bN"/>
                         <viewControllerLayoutGuide type="bottom" id="HxK-ef-cAK"/>

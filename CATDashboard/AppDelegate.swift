@@ -10,7 +10,7 @@ import SAPFoundation
 import SAPFiori
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     // MARK: - LOCAL VARIABLES
     var window: UIWindow?
@@ -28,5 +28,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.urlSession = urlSession
         
         UINavigationBar.applyFioriStyle()
+        
+        let splitViewController = self.window!.rootViewController as! UISplitViewController
+        splitViewController.delegate = self
+    }
+    
+    // MARK: - SplitView Delegate
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        guard let secondaryAsDetails = secondaryViewController as? DetailsViewController else {
+            return false
+        }
+        // Without this, on iPhone the main screen is the detailview and the masterview can not be reached.
+        guard secondaryAsDetails.project != nil else {
+              // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+            return true
+        }
+        
+        return false
     }
 }
