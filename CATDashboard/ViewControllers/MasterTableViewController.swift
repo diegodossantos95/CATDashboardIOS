@@ -84,6 +84,19 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
         }
     }
     
+    // MARK: Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetails" {
+            if let toViewController = segue.destination as? DetailsViewController {
+                // Pass the selected object to the new view controller.
+                if let indexPath = self.tableView.indexPathForSelectedRow {
+                    let selectedProject = self._projects[indexPath.row]
+                    toViewController.project = selectedProject
+                }
+            }
+        }
+    }
+    
     
     // MARK: MASTER TABLE DELEGATE
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
