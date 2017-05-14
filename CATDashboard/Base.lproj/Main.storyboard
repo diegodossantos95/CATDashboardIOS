@@ -12,7 +12,7 @@
         <!--Details-->
         <scene sceneID="XE9-j1-7bT">
             <objects>
-                <viewController title="Details" id="PfL-bW-nhF" sceneMemberID="viewController">
+                <viewController title="Details" id="PfL-bW-nhF" customClass="DetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Guy-h1-0bN"/>
                         <viewControllerLayoutGuide type="bottom" id="HxK-ef-cAK"/>
@@ -43,6 +43,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="PfL-bW-nhF" kind="show" identifier="showDetails" action="showDetailViewController:sender:" id="Ywh-sd-N0v"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -89,4 +92,7 @@
             <point key="canvasLocation" x="-2034" y="1948"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ywh-sd-N0v"/>
+    </inferredMetricsTieBreakers>
 </document>
