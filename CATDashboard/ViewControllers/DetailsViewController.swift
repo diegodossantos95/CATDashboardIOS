@@ -23,12 +23,22 @@ class DetailsViewController: UIViewController {
     }
     private var issues: [Issue]?
     
+    // MARK: Outlets
+    @IBOutlet weak var projectNameLabel: UILabel!
+    @IBOutlet weak var CATDateLabel: UILabel!
+    
     // MARK: VC LIFECYLE
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureView()
     }
     
     // MARK: Private functions
+    private func configureView() {
+        self.projectNameLabel.text = "\(project?.name ?? "")"
+        self.CATDateLabel.text = "CAT: \(project?.getCATDate() ?? "")"
+    }
+    
     private func updateProject() {
         DispatchQueue.global().async {
             self.requestProjectDetails(completionHandler: {_ in
