@@ -23,12 +23,17 @@ class CATServiceDataAccess {
     }
 
     func loadProjects(completionHandler: @escaping([Project]?, Error?) -> Void) {
-        self.executeRequest(self.service.projects, completionHandler: completionHandler)
+        let query = DataQuery().select(Project.id, Project.name, Project.startDate, Project.endDate)
+        self.executeRequest(query: query, request: self.service.projects, completionHandler: completionHandler)
     }
     
-    private func executeRequest<T>(_ request: @escaping(DataQuery) throws -> [T], completionHandler: @escaping([T]?, Error?) -> Void) {
+    func loadProjectDetailsById(projectId: Int, completionHandler: @escaping([Project]?, Error?) -> Void) {
+        let query = DataQuery().withKey(Project.key(id:projectId)).expand(Project.issueDetails)
+        self.executeRequest(query: query, request: self.service.projects, completionHandler: completionHandler)
+    }
+    
+    private func executeRequest<T>(query: DataQuery, request: @escaping(DataQuery) throws -> [T], completionHandler: @escaping([T]?, Error?) -> Void) {
         DispatchQueue.global().async {
-            let query = DataQuery().selectAll().top(20)
             do {
                 let result = try request(query)
                 completionHandler(result, nil)
