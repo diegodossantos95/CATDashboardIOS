@@ -33,6 +33,9 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 98
         
+        // Remove the separators below the table
+        self.tableView.tableFooterView = UIView()
+        
         self.updateTableWithActivityIndicator()
     }
     
