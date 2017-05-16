@@ -19,7 +19,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
     private var activityIndicator: UIActivityIndicatorView!
     var project: Project? {
         didSet {
-            self.updateProject()
+            self.updateProjectIssues()
         }
     }
     private var issues: [Issue] = [Issue]()
@@ -37,13 +37,14 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     // MARK: Private functions
     private func configureView() {
+        // Set title and cat date labels
         self.projectNameLabel.text = "\(project?.name ?? "")"
         self.CATDateLabel.text = "CAT: \(project?.getCATDate() ?? "")"
     }
     
-    private func updateProject() {
+    private func updateProjectIssues() {
         DispatchQueue.global().async {
-            self.requestProjectDetails(completionHandler: {error in
+            self.requestProjectIssues(completionHandler: {error in
                 guard error != nil else {
                     DispatchQueue.main.async {
                         self.issuesTable.reloadData()
@@ -54,7 +55,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    private func requestProjectDetails(completionHandler: @escaping(Error?) -> Void) {
+    private func requestProjectIssues(completionHandler: @escaping(Error?) -> Void) {
         self.dataAccess.loadIssuesByProjectId(projectId: self.project!.id!) { (issues, error) in
             guard let issues = issues else {
                 completionHandler(error!)
@@ -67,6 +68,10 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     // MARK: Details TABLE DELEGATE
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Issues"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.issues.count
     }

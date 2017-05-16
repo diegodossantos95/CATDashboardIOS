@@ -22,10 +22,8 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
     // MARK: VC LIFECYLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Initialize activity indicator
-        self.activityIndicator = self.initActivityIndicator()
-        self.activityIndicator.center = self.tableView.center
-        self.tableView.addSubview(self.activityIndicator)
+    
+        self.configureActivityIndicator()
         // add refreshcontrol UI
         self.refreshControl?.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshControl!)
@@ -37,6 +35,13 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
     }
     
     // MARK: PRIVATE FUNCTION
+    private func configureActivityIndicator(){
+        // Initialize activity indicator
+        self.activityIndicator = self.initActivityIndicator()
+        self.activityIndicator.center = self.tableView.center
+        self.tableView.addSubview(self.activityIndicator)
+    }
+    
     func refresh() {
         DispatchQueue.global().async {
             self.updateTable(completionHandler: {
