@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SAPFiori
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: LOCAL VARIABLES
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -21,11 +22,12 @@ class DetailsViewController: UIViewController {
             self.updateProject()
         }
     }
-    private var issues: [Issue]?
+    private var issues: [Issue] = [Issue]()
     
     // MARK: Outlets
     @IBOutlet weak var projectNameLabel: UILabel!
     @IBOutlet weak var CATDateLabel: UILabel!
+    @IBOutlet weak var issuesTable: UITableView!
     
     // MARK: VC LIFECYLE
     override func viewDidLoad() {
@@ -41,22 +43,49 @@ class DetailsViewController: UIViewController {
     
     private func updateProject() {
         DispatchQueue.global().async {
-            self.requestProjectDetails(completionHandler: {_ in
+            self.requestProjectDetails(completionHandler: {error in
+                guard error != nil else {
+                    DispatchQueue.main.async {
+                        self.issuesTable.reloadData()
+                    }
+                    return
+                }
             })
         }
     }
     
     private func requestProjectDetails(completionHandler: @escaping(Error?) -> Void) {
-        self.dataAccess.loadProjectDetailsById(projectId: self.project!.id!) { (projects, error) in
-            guard let projects = projects else {
+        self.dataAccess.loadIssuesByProjectId(projectId: self.project!.id!) { (issues, error) in
+            guard let issues = issues else {
                 completionHandler(error!)
                 return
             }
-            
-            self.project = projects[0]
-            self.issues = self.project?.issueDetails
+            self.issues = issues
             
             completionHandler(nil)
         }
+    }
+    
+    // MARK: Details TABLE DELEGATE
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.issues.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        let issue = self.issues[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IssueCell",
+                                                 for: indexPath as IndexPath)
+        guard let issueCell = cell as? FUIObjectTableViewCell else {
+            return cell
+        }
+        
+        issueCell.headlineText = issue.name
+        issueCell.subheadlineText = issue.description
+        
+        return issueCell
     }
 }

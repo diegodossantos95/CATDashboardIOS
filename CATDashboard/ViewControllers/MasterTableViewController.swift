@@ -13,7 +13,7 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
     
     // MARK: LOCAL VARIABLES
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    private var _projects: [Project] = [Project]()
+    private var projects: [Project] = [Project]()
     private var activityIndicator: UIActivityIndicatorView!
     private var dataAccess: CATServiceDataAccess {
         return appDelegate.catServiceClass
@@ -29,9 +29,6 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
         // add refreshcontrol UI
         self.refreshControl?.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshControl!)
-        
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 98
         
         // Remove the separators below the table
         self.tableView.tableFooterView = UIView()
@@ -82,7 +79,7 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
                 completionHandler(error!)
                 return
             }
-            self._projects = projects
+            self.projects = projects
             completionHandler(nil)
         }
     }
@@ -93,7 +90,7 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
             if let toViewController = segue.destination as? DetailsViewController {
                 // Pass the selected object to the new view controller.
                 if let indexPath = self.tableView.indexPathForSelectedRow {
-                    let selectedProject = self._projects[indexPath.row]
+                    let selectedProject = self.projects[indexPath.row]
                     toViewController.project = selectedProject
                 }
             }
@@ -103,24 +100,24 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
     
     // MARK: MASTER TABLE DELEGATE
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self._projects.count
+        return self.projects.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
+
+        let project = self.projects[indexPath.row]
         
-        let project = self._projects[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FUIObjectTableViewCell",
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell",
                                                  for: indexPath as IndexPath)
-        guard let objectCell = cell as? FUIObjectTableViewCell else {
+        guard let projectCell = cell as? FUIObjectTableViewCell else {
             return cell
         }
         
-        objectCell.headlineText = project.name!
-        objectCell.subheadlineText = "CAT: " + project.getCATDate()
+        projectCell.headlineText = project.name!
+        projectCell.subheadlineText = "CAT: " + project.getCATDate()
         
-        return objectCell
+        return projectCell
     }
 }

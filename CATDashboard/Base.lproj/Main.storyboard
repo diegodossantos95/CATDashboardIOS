@@ -25,19 +25,19 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9E2-as-S76">
-                                        <rect key="frame" x="8" y="16" width="359" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="8" y="16" width="359" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAT Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3t-pj-Ftz">
-                                        <rect key="frame" x="8" y="45" width="359" height="21"/>
+                                        <rect key="frame" x="8" y="45.5" width="359" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.21176470588235294" green="0.29803921568627451" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.34106860549353063" green="0.46507134434105935" blue="0.57646484374999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="N3t-pj-Ftz" secondAttribute="trailing" constant="8" id="22D-sW-d9v"/>
                                     <constraint firstItem="9E2-as-S76" firstAttribute="top" secondItem="rhe-04-QVz" secondAttribute="top" constant="16" id="640-bV-hW4"/>
@@ -48,16 +48,39 @@
                                     <constraint firstItem="N3t-pj-Ftz" firstAttribute="leading" secondItem="rhe-04-QVz" secondAttribute="leading" constant="8" id="uXe-ub-l6m"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gwV-Li-KTX">
+                                <rect key="frame" x="0.0" y="144" width="375" height="523"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssueCell" id="T5D-vW-CYx" customClass="FUIObjectTableViewCell" customModule="SAPFiori">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T5D-vW-CYx" id="Kev-Qe-eIh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PfL-bW-nhF" id="zNl-XU-jvU"/>
+                                    <outlet property="delegate" destination="PfL-bW-nhF" id="Zs0-BV-9MA"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gwV-Li-KTX" secondAttribute="trailing" id="1lu-dU-yxV"/>
                             <constraint firstItem="rhe-04-QVz" firstAttribute="leading" secondItem="fzw-jL-GP9" secondAttribute="leading" id="2rJ-6E-jer"/>
                             <constraint firstItem="rhe-04-QVz" firstAttribute="top" secondItem="Guy-h1-0bN" secondAttribute="bottom" id="4uW-iw-ah1"/>
                             <constraint firstAttribute="trailing" secondItem="rhe-04-QVz" secondAttribute="trailing" id="FWe-zq-Hdg"/>
+                            <constraint firstItem="gwV-Li-KTX" firstAttribute="top" secondItem="rhe-04-QVz" secondAttribute="bottom" id="cdG-u1-JLV"/>
+                            <constraint firstItem="HxK-ef-cAK" firstAttribute="top" secondItem="gwV-Li-KTX" secondAttribute="bottom" id="kun-FW-FV3"/>
+                            <constraint firstItem="gwV-Li-KTX" firstAttribute="leading" secondItem="fzw-jL-GP9" secondAttribute="leading" id="omv-70-ttr"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="CATDateLabel" destination="N3t-pj-Ftz" id="MgW-Op-9iO"/>
+                        <outlet property="issuesTable" destination="gwV-Li-KTX" id="SZQ-lf-NfL"/>
                         <outlet property="projectNameLabel" destination="9E2-as-S76" id="ouw-3I-WRb"/>
                     </connections>
                 </viewController>
@@ -74,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FUIObjectTableViewCell" id="0GA-HQ-gAm" customClass="FUIObjectTableViewCell" customModule="SAPFiori">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProjectCell" id="0GA-HQ-gAm" customClass="FUIObjectTableViewCell" customModule="SAPFiori">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0GA-HQ-gAm" id="BlB-Vo-obp">
