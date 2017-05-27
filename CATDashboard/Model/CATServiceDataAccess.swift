@@ -10,16 +10,36 @@ import Foundation
 import SAPCommon
 import SAPFoundation
 import SAPOData
+import SAPOfflineOData
 
 class CATServiceDataAccess {
-    var service: CATService<OnlineODataProvider>
+    var service: CATService<OfflineODataProvider>
+    var offlineODataProvider: OfflineODataProvider
+    var isStoreOpened = false
     
     init(urlSession: SAPURLSession) {
-        let odataProvider = OnlineODataProvider(serviceName: "CATService", serviceRoot: Constants.appUrl, sapURLSession: urlSession)
-        odataProvider.serviceOptions.checkVersion = false // this disables version validation of the backend OData service and should only be used in demo and test applications
-        self.service = CATService(provider: odataProvider)
-        // To update entity force to use X-HTTP-Method header
-        _ = self.service.provider.networkOptions.tunneledMethods.append("MERGE")
+        var offlineParameters = OfflineODataParameters()
+        
+        // append the X-SMP-APPID header
+        offlineParameters.customHeaders = ["X-SMP-APPID": Constants.appId]
+        offlineParameters.storeName = "OFFLINE_STORE"
+        offlineParameters.enableRepeatableRequests = true
+        
+        // create offline data provider
+        self.offlineODataProvider = try! OfflineODataProvider(
+            serviceRoot: Constants.appUrl,
+            parameters: offlineParameters,
+            sapURLSession: urlSession
+        )
+        
+        // define offline defining query
+        let projectQuery = OfflineODataDefiningQuery(name: "Project", query: "Projects", automaticallyRetrievesStreams: false)
+        try! self.offlineODataProvider.add(definingQuery: projectQuery)
+        
+        let issuesQuery = OfflineODataDefiningQuery(name: "Issue", query: "Issues", automaticallyRetrievesStreams: false)
+        try! self.offlineODataProvider.add(definingQuery: issuesQuery)
+        
+        self.service = CATService(provider: self.offlineODataProvider)
     }
 
     func loadProjects(completionHandler: @escaping([Project]?, Error?) -> Void) {
@@ -32,14 +52,45 @@ class CATServiceDataAccess {
         self.executeRequest(query: query, request: self.service.issues, completionHandler: completionHandler)
     }
     
-    private func executeRequest<T>(query: DataQuery, request: @escaping(DataQuery) throws -> [T], completionHandler: @escaping([T]?, Error?) -> Void) {
+    private func executeRequest<T>(query: DataQuery, request: @escaping(DataQuery) throws -> [T],
+                                completionHandler: @escaping([T]?, Error?) -> Void) {
         DispatchQueue.global().async {
-            do {
-                let result = try request(query)
-                completionHandler(result, nil)
-            } catch let error {
-                completionHandler(nil, error)
+            if (!self.isStoreOpened) {
+                
+                // try opening the store
+                self.service.open { error in
+                    guard error == nil else {
+                        print(error.debugDescription)
+                        return;
+                    }
+                    
+                    // set flag indicating store is open
+                    self.isStoreOpened = true
+                    
+                    // download data
+                    self.service.download { error in
+                        guard error == nil else {
+                            // in case of error, close store and reset flag
+                            print(error.debugDescription)
+                            self.isStoreOpened = false
+                            return
+                        }
+                        
+                        do {
+                            // perform query
+                            let result = try request(query)
+                            completionHandler(result, nil)
+                        } catch let error {
+                            print(error.localizedDescription)
+                            completionHandler(nil, error)
+                        }
+                        
+                        // once finished, close store and reset flag
+                        self.isStoreOpened = false
+                    }
+                }
             }
         }
     }
+
 }

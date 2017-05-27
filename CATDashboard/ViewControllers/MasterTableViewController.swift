@@ -42,16 +42,6 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
         self.tableView.addSubview(self.activityIndicator)
     }
     
-    func refresh() {
-        DispatchQueue.global().async {
-            self.updateTable(completionHandler: {
-                DispatchQueue.main.async {
-                    self.refreshControl?.endRefreshing()
-                }
-            })
-        }
-    }
-    
     private func updateTableWithActivityIndicator() {
         self.showActivityIndicator(self.activityIndicator)
         DispatchQueue.global().async {
@@ -86,6 +76,17 @@ class MasterTableViewController: UITableViewController, ActivityIndicator {
             }
             self.projects = projects
             completionHandler(nil)
+        }
+    }
+    
+    //MARK: Refresh Control
+    func refresh() {
+        DispatchQueue.global().async {
+            self.updateTable(completionHandler: {
+                DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
+                }
+            })
         }
     }
     
